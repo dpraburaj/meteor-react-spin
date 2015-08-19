@@ -11,7 +11,7 @@ Npm.depends({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
-  api.use('react');
+  api.use('react@0.1.4');
 
   api.addFiles([
     '.npm/package/node_modules/spin.js/spin.js',
