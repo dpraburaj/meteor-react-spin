@@ -14,7 +14,7 @@ Installation:
 The spinner can be instantiated like so
 
 ```jsx
-<Spinner />
+<SpinnerView />
 ```
 
 ## SpinnerMixin
@@ -28,7 +28,7 @@ To use this mixin, two steps are required
   function.
 
 Example: 
-```javascript
+```jsx
 Todo = React.createClass({
 	mixins: [ReactMeteorData, SpinnerMixin],
     
@@ -55,7 +55,7 @@ There's an optional callback function for the `SpinnerMixin` that allows you to 
 in another element.
 
 Example:
-```
+```jsx
 Todo = React.createClass({
 	mixins: [ReactMeteorData, SpinnerMixin],
     
