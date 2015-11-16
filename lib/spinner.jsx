@@ -23,7 +23,7 @@ SpinnerView = React.createClass({
 	componentDidMount() {
 		let options = _.extend({}, Meteor.Spinner.options, this.props.options);
 		this.spinner = new Spinner(options);
-		this.spinner.spin(this.refs.spinner.getDOMNode());	
+		this.spinner.spin(ReactDOM.findDOMNode(this.refs.spinner));	
 	},
 
 	componentWillUnmount() {
@@ -43,9 +43,9 @@ SpinnerMixin = {
       let allSubsReady = _.every(this.data.subscriptions, (subscription) => {
         return subscription.ready();
       });
-      
+
       let spinnerComponent;
-      if(this.spinnerWrapper) 
+      if(this.spinnerWrapper)
         spinnerComponent = this.spinnerWrapper(<SpinnerView />) ;
       else
         spinnerComponent = <SpinnerView />;
