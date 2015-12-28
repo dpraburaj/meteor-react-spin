@@ -26,6 +26,16 @@ SpinnerView = React.createClass({
 		this.spinner.spin(ReactDOM.findDOMNode(this.refs.spinner));	
 	},
 
+	componentWillReceiveProps(props) {
+	  // stop old spinner
+	  this.spinner && this.spinner.stop();
+	
+	  // start new spinner with new props
+	  var options = _.extend({}, Meteor.Spinner.options, props);
+	  this.spinner = new Spinner(options);
+	  this.spinner.spin(ReactDOM.findDOMNode(this.refs.spinner));
+	},
+
 	componentWillUnmount() {
 		this.spinner && this.spinner.stop();
 	},
