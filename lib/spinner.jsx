@@ -67,5 +67,5 @@ SpinnerMixin = {
 	componentWillReceiveProps(nextProps) {
     _.each(this.data.subscriptions, (sub) => {
       sub.stop();
-    });
+    })
 };
