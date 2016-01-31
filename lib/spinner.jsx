@@ -68,4 +68,5 @@ SpinnerMixin = {
     _.each(this.data.subscriptions, (sub) => {
       sub.stop();
     })
+  }
 };
