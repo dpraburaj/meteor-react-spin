@@ -1,6 +1,6 @@
 Package.describe({
   name: 'dpraburaj:react-spin',
-  version: '2.3.3',
+  version: '2.3.4',
   summary: 'Spin.js wrapper for React.js projects in Meteor',
   git: 'https://github.com/dpraburaj/meteor-react-spin',
 });

@@ -23,13 +23,13 @@ SpinnerView = React.createClass({
 	componentDidMount() {
 		let options = _.extend({}, Meteor.Spinner.options, this.props.options);
 		this.spinner = new Spinner(options);
-		this.spinner.spin(ReactDOM.findDOMNode(this.refs.spinner));	
+		this.spinner.spin(ReactDOM.findDOMNode(this.refs.spinner));
 	},
 
 	componentWillReceiveProps(props) {
 	  // stop old spinner
 	  this.spinner && this.spinner.stop();
-	
+
 	  // start new spinner with new props
 	  var options = _.extend({}, Meteor.Spinner.options, props);
 	  this.spinner = new Spinner(options);
@@ -62,5 +62,10 @@ SpinnerMixin = {
 
       return allSubsReady ? this.oldRender() : spinnerComponent;
     }
-  }
+  },
+
+	componentWillReceiveProps(nextProps) {
+    _.each(this.data.subscriptions, (sub) => {
+      sub.stop();
+    });
 };
